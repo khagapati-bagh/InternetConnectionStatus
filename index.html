@@ -1,9 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <title>Check Internet Connection Status</title>
-    </head>
-    <body>
-        <p class="status"></p>
-    </body>
+
+<head>
+    <script>
+        function CheckOnlineStatus(msg) {
+            var status = document.getElementById("status");
+            var condition = navigator.onLine ? "ONLINE" : "OFFLINE";
+            var state = document.getElementById("state");
+            state.innerHTML = condition;
+        }
+        function Pageloaded() {
+            CheckOnlineStatus("load");
+            document.body.addEventListener("offline", function () {
+                CheckOnlineStatus("offline")
+            }, false);
+            document.body.addEventListener("online", function () {
+                CheckOnlineStatus("online")
+            }, false);
+        }
+    </script>
+</head>
+
+<body onload="Pageloaded()">
+    <div id="status">
+        <p id="state"></p>
+    </div>
+</body>
+
 </html>
