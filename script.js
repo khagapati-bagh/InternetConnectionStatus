@@ -1,5 +1,6 @@
 function CheckOnlineStatus(msg) {
 
+
     var status = document.getElementById("status");
     var condition = navigator.onLine ? "ONLINE" : "OFFLINE";
     var state = document.getElementById("state");
