@@ -4,6 +4,12 @@
   --white: #fff;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #status {
   width: 100vw;
   height: 100vh;
@@ -11,6 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 #state {
@@ -32,4 +39,11 @@
 
 .OFFLINE {
   background-color: var(--offline);
+}
+
+.provider-info {
+  font-size: 1.5rem;
+}
+.provider-name {
+  font-weight: bold;
 }
