@@ -3,6 +3,8 @@ function CheckOnlineStatus(msg) {
   var condition = navigator.onLine ? "ONLINE" : "OFFLINE";
   var state = document.getElementById("state");
   state.innerHTML = condition;
+  state.classList.add(condition);
+  console.log(condition);
 }
 function Pageloaded() {
   CheckOnlineStatus("load");

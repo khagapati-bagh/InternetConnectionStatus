@@ -10,3 +10,11 @@
 #state {
   font-size: 4.5rem;
 }
+
+.ONLINE{
+  color: green;
+}
+
+.OFFLINE{
+  color: red;
+}
