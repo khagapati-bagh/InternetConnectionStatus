@@ -1,3 +1,9 @@
+:root {
+  --online: #32bf00;
+  --offline: #cc3300;
+  --white: #fff;
+}
+
 #status {
   width: 100vw;
   height: 100vh;
@@ -9,4 +15,21 @@
 
 #state {
   font-size: 4.5rem;
+  color: var(--white);
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.3s;
+}
+
+#state:hover {
+  filter: opacity(0.9);
+}
+
+.ONLINE {
+  background-color: var(--online);
+}
+
+.OFFLINE {
+  background-color: var(--offline);
 }
