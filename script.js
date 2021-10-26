@@ -5,14 +5,18 @@ const getApi = async (url) => {
 };
 
 async function CheckOnlineStatus(msg) {
-  let { org } = await getApi("http://ip-api.com/json/");
   let status = document.getElementById("status");
-  let providerName = document.querySelector(".provider-name");
   let condition = navigator.onLine ? "ONLINE" : "OFFLINE";
   let state = document.getElementById("state");
   state.classList.add(condition);
   state.innerHTML = condition;
-  providerName.innerHTML = org;
+  let providerName = document.querySelector(".provider-name");
+
+  if (condition === "ONLINE") {
+    let { org } = await getApi("http://ip-api.com/json/");
+    console.log(org);
+    providerName.innerHTML = org;
+  }
 }
 
 function Pageloaded() {
