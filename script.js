@@ -10,6 +10,7 @@ function Pageloaded() {
     "offline",
     function () {
       CheckOnlineStatus("offline");
+      location.reload();
     },
     false
   );
@@ -17,6 +18,7 @@ function Pageloaded() {
     "online",
     function () {
       CheckOnlineStatus("online");
+      location.reload();
     },
     false
   );
