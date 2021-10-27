@@ -11,11 +11,14 @@ async function CheckOnlineStatus(msg) {
   state.classList.add(condition);
   state.innerHTML = condition;
   let providerName = document.querySelector(".provider-name");
+  let providerInfo = document.querySelector(".provider-info");
 
   if (condition === "ONLINE") {
     let { org } = await getApi("http://ip-api.com/json/");
     console.log(org);
     providerName.innerHTML = org;
+  } else {
+    providerInfo.style.display = "none";
   }
 }
 
