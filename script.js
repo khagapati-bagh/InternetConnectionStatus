@@ -4,22 +4,17 @@ function CheckOnlineStatus(msg) {
   var state = document.getElementById("state");
   state.innerHTML = condition;
 }
+
 function Pageloaded() {
   CheckOnlineStatus("load");
-  document.body.addEventListener(
-    "offline",
-    function () {
-      CheckOnlineStatus("offline");
-      location.reload();
-    },
-    false
-  );
-  document.body.addEventListener(
-    "online",
-    function () {
-      CheckOnlineStatus("online");
-      location.reload();
-    },
-    false
-  );
+
+  window.ononline = function () {
+    CheckOnlineStatus("online");
+    location.reload();
+  };
+
+  window.onoffline = function () {
+    CheckOnlineStatus("offline");
+    location.reload();
+  };
 }
