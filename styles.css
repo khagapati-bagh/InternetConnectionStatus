@@ -4,6 +4,12 @@
   --white: #fff;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #status {
   width: 100vw;
   height: 100vh;
@@ -11,9 +17,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 #state {
+  order: 2;
+  margin-top: 15px;
   font-size: 4.5rem;
   color: var(--white);
   padding: 10px 15px;
@@ -32,4 +41,21 @@
 
 .OFFLINE {
   background-color: var(--offline);
+}
+
+.provider-info {
+  order: 1;
+  height: 40px;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+#state:hover + .provider-info {
+  display: block;
+  opacity: 1;
+}
+
+.provider-name {
+  font-weight: bold;
 }
