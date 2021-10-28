@@ -24,18 +24,14 @@ async function CheckOnlineStatus(msg) {
 
 function Pageloaded() {
   CheckOnlineStatus("load");
-  document.body.addEventListener(
-    "offline",
-    function () {
-      CheckOnlineStatus("offline");
-    },
-    false
-  );
-  document.body.addEventListener(
-    "online",
-    function () {
-      CheckOnlineStatus("online");
-    },
-    false
-  );
+
+  window.ononline = function () {
+    CheckOnlineStatus("online");
+    location.reload();
+  };
+
+  window.onoffline = function () {
+    CheckOnlineStatus("offline");
+    location.reload();
+  };
 }
